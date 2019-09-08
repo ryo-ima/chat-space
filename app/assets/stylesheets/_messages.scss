@@ -64,14 +64,15 @@ html{
 
 .contents-main{
   @include clearfix();
-  height:100%;
+  height: calc(100% - 99px);
   padding-top:99px;
   position:relative;
+  display:flex;
   z-index:1;
   &-left{
     @include left();
     background-color: #2f3e51;
-    min-height:100%;
+    overflow:scroll;
     &__group{
       padding-top:20px;
       font-size:15px;
@@ -92,7 +93,7 @@ html{
   &-right{
     @include right();
     background-color: #fafafa;
-    min-height:100%;
+    overflow:scroll;
     &__user{
       padding-top:46px;
       @include clearfix();
