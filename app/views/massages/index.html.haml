@@ -1,1 +1,44 @@
-グループを作成しました
+.header-top
+  .header-top__messages
+    グループを作成しました
+
+.header-main
+  .header-main-left
+    .header-main-left__messages
+      seo
+    .header-main-left__menu
+      =link_to "", class: "header-main-left__menu" do
+        =fa_icon 'cog'
+      =link_to "", class: "header-main-left__menu" do
+        =fa_icon 'edit'
+  .header-main-right
+    .header-main-right__group
+      testgroup
+      .header-main-right__group-members
+        Members:seo neko
+    .header-main-right__edit
+      Edit
+
+.contents-main
+  .contents-main-left
+    .contents-main-left__group
+      testgroup
+    .contents-main-left__message
+      testmessage
+  .contents-main-right
+    .contents-main-right__user
+      .contents-main-right__user-name
+        testuser
+      .contents-main-right__user-timestamp
+        testtimestamp
+    .contents-main-right__message
+      testmessage
+  .contents-main-message-form
+    .contents-main-message-form__message
+      type a message
+      .contents-main-message-form__message-image
+        =link_to "", class: "contents-main-message-form__message-image" do
+          =fa_icon 'image'
+    .contents-main-message-form__send
+      Send
+

@@ -1,0 +1,22 @@
+$mainWhiteColor: #FFFFFF;
+$mainGrayColor: #999999;
+$mainBlackColor: #434A54;
+@mixin clearfix() {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+@mixin left{
+  padding: 0 20px;
+  width: 260px;
+  float: left;
+}
+
+@mixin right{
+  width: calc(100vw - 300px - 80px);
+  float: right;
+  padding:0 40px;
+}
