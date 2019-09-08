@@ -6,23 +6,9 @@ html{
   }
 
 
-.header-top{
-  height: 30px;
-  width: 100%;
-  position:fixed;
-  z-index:3;
-  background-color:#38AEF0;
-  &__messages{
-    text-align: center;
-    color:$mainWhiteColor;
-    line-height: 30px;
-  }
-}
-
 .header-main{
   width: 100%;
   position:fixed;
-  padding-top:30px;
   background-color:$mainWhiteColor;
   z-index:2;
   &-left{
@@ -79,12 +65,11 @@ html{
 .contents-main{
   @include clearfix();
   height:100%;
-  padding-top:129px;
+  padding-top:99px;
   position:relative;
   z-index:1;
   &-left{
     @include left();
-    position:fixed;
     background-color: #2f3e51;
     min-height:100%;
     &__group{
