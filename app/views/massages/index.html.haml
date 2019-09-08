@@ -33,12 +33,14 @@
         testtimestamp
     .contents-main-right__message
       testmessage
+      .fontawesome_file_field
+        &#xf03e
   .contents-main-message-form
     .contents-main-message-form__message
-      type a message
+      %input(placeholder="type a message" class="input-message" type="text" name="message")
       .contents-main-message-form__message-image
-        =link_to "", class: "contents-main-message-form__message-image" do
-          =fa_icon 'image'
+        %label(class="fontawesome_image")
+          &#xf03e
+          %input(type="file" class="fontawesome_file_field" label="aaa")
     .contents-main-message-form__send
       Send
-
