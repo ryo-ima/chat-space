@@ -93,6 +93,7 @@ html{
   &-right{
     @include right();
     background-color: #fafafa;
+    padding-bottom:110px;
     overflow:scroll;
     &__user{
       padding-top:46px;
