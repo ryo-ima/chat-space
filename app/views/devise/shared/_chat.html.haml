@@ -31,50 +31,16 @@
         testtimestamp
     .contents-main-right__message
       testmessage
-    .contents-main-right__user
-      .contents-main-right__user-name
-        testuser
-      .contents-main-right__user-timestamp
-        testtimestamp
-    .contents-main-right__message
-      testmessage
-    .contents-main-right__user
-      .contents-main-right__user-name
-        testuser
-      .contents-main-right__user-timestamp
-        testtimestamp
-    .contents-main-right__message
-      testmessage
-    .contents-main-right__user
-      .contents-main-right__user-name
-        testuser
-      .contents-main-right__user-timestamp
-        testtimestamp
-    .contents-main-right__message
-      testmessage
-    .contents-main-right__user
-      .contents-main-right__user-name
-        testuser
-      .contents-main-right__user-timestamp
-        testtimestamp
-    .contents-main-right__message
-      testmessage
-    .contents-main-right__user
-      .contents-main-right__user-name
-        testuser
-      .contents-main-right__user-timestamp
-        testtimestamp
-    .contents-main-right__message
-      testmessage
       .fontawesome_file_field
         &#xf03e
   .contents-main-message-form
-    .contents-main-message-form__message
-      %input(placeholder="type a message" class="input-message" type="text" name="message")
-      .contents-main-message-form__message-image
-        %label(class="fontawesome_image")
-          &#xf03e
-          %input(type="file" class="fontawesome_file_field" label="aaa")
-    .contents-main-message-form__send
-      Send
+    = form_for [@group, @message] do |f|
+      .contents-main-message-form__message
+        = f.text_field :content, class: 'input-message', placeholder: 'type a message'
+        .contents-main-message-form__message-image
+          = f.label :image, class: 'fontawesome_image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'fontawesome_file_field'
+      .contents-main-message-form__send
+        = f.submit 'Send', class: 'contents-main-message-form__send'
 
