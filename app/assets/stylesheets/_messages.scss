@@ -34,6 +34,7 @@ html{
     border-bottom: solid 1px #eeeeee;
     &__group{
       padding-top:35px;
+      height:63px;
       font-size:20px;
       color:#333333;
       float:left;
@@ -93,6 +94,7 @@ html{
   &-right{
     @include right();
     background-color: #fafafa;
+    padding-bottom:110px;
     overflow:scroll;
     &__user{
       padding-top:46px;

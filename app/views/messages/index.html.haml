@@ -1,1 +1,42 @@
-= render 'devise/shared/chat'
+.header-main
+  .header-main-left
+    .header-main-left__messages
+      = current_user.name
+    .header-main-left__menu
+      = link_to edit_user_path(current_user) do
+        = fa_icon 'cog', class: 'header-main-left__menu'
+      = link_to new_group_path do
+        = fa_icon 'pencil-square-o', class: 'header-main-left__menu'
+  .header-main-right
+    .header-main-right__group
+      = @group.name
+      .header-main-right__group-members
+        - @group.users.each do |user| 
+          = user.name
+    = link_to edit_group_path(@group) do
+      .header-main-right__edit
+        Edit
+
+.contents-main
+  .contents-main-left
+    - current_user.groups.each do |group|
+      = link_to group_messages_path(group) do
+        .contents-main-left__group
+          = group.name
+        .contents-main-left__message
+          = group.show_last_message
+  .contents-main-right
+    = render @messages
+  .contents-main-message-form
+    = form_for [@group, @message] do |f|
+      .contents-main-message-form__message
+        = f.text_field :content, class: 'input-message', placeholder: 'type a message'
+        .contents-main-message-form__message-image
+          = f.label :image, class: 'fontawesome_image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'fontawesome_file_field'
+      .contents-main-message-form__send
+        = f.submit 'Send', class: 'contents-main-message-form__send'
+
+
+

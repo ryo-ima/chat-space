@@ -1,7 +1,7 @@
 .header-main
   .header-main-left
     .header-main-left__messages
-      seo
+      = current_user.name
     .header-main-left__menu
       = link_to new_group_path do
         = fa_icon 'pencil-square-o', class: 'header-main-left__menu'
@@ -15,5 +15,5 @@
         .contents-main-left__group
           = group.name
         .contents-main-left__message
-          メッセージはまだありません。
+          = group.show_last_message
 
