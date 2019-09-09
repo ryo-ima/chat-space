@@ -1,7 +1,7 @@
 .header-main
   .header-main-left
     .header-main-left__messages
-      seo
+      = current_user.name
     .header-main-left__menu
       = link_to edit_user_path(current_user) do
         = fa_icon 'cog', class: 'header-main-left__menu'
@@ -9,11 +9,13 @@
         = fa_icon 'pencil-square-o', class: 'header-main-left__menu'
   .header-main-right
     .header-main-right__group
-      testgroup
+      = @group.name
       .header-main-right__group-members
-        Members:seo neko
-    .header-main-right__edit
-      Edit
+        - @group.users.each do |user| 
+          = user.name
+    = link_to edit_group_path(@group) do
+      .header-main-right__edit
+        Edit
 
 .contents-main
   .contents-main-left
@@ -22,7 +24,7 @@
         .contents-main-left__group
           = group.name
         .contents-main-left__message
-          メッセージはまだありません。
+          = group.show_last_message
   .contents-main-right
     = render @messages
   .contents-main-message-form
