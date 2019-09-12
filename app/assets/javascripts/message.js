@@ -31,8 +31,7 @@ $(document).on('turbolinks:load', function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.contents-main-right').append(html);
-      $('#message_content').val('');
-      $('#message_image').val('');
+      $('#new_message')[0].reset();
       scrollBottom();
     })
     .fail(function(data){
