@@ -96,26 +96,27 @@ html{
     background-color: #fafafa;
     padding-bottom:110px;
     overflow:scroll;
-    &__user{
-      padding-top:46px;
-      @include clearfix();
-      &-name{
-        font-size:16px;
-        font-weight:bold;
+    &-message{
+      &__user{
+        padding-top:46px;
+        @include clearfix();
+        &-name{
+          font-size:16px;
+          font-weight:bold;
+          color:$mainBlackColor;
+          float:left;
+        }
+        &-timestamp{
+          font-size:12px;
+          color:$mainGrayColor;
+          float:left;
+        }
+      }
+      &__message{
+        padding-top:10px;
+        font-size: 14px;
         color:$mainBlackColor;
-        float:left;
       }
-      &-timestamp{
-        font-size:12px;
-        color:$mainGrayColor;
-        float:left;
-      }
-    }
-    &__message{
-      padding-top:10px;
-      font-size: 14px;
-      color:$mainBlackColor;
-
     }
   }
   &-message-form{
