@@ -96,6 +96,7 @@ html{
     background-color: #fafafa;
     padding-bottom:110px;
     overflow:scroll;
+    position:relative;
     &-message{
       &__user{
         padding-top:46px;
@@ -126,8 +127,9 @@ html{
     right:0;
     position:fixed;
     padding:20px 40px;
+    width:calc(100% - 380px);
     &__message{
-      width:930px;
+      width:calc(100% - 135px);
       height:100%;
       background-color:$mainWhiteColor;
       position:relative;
@@ -157,12 +159,12 @@ html{
 
 .input-message{
   background-color:$mainWhiteColor;
-  padding: 0 40px 0 10px;
   color:$mainBlackColor;
   font-size:16px;
   float:left;
-  width:880px;
+  width:100%;
   height:50px;
+  padding-left:20px;
   line-height:50px;
   position:relative;
   border-style:none;
