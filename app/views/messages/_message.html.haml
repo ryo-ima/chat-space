@@ -3,7 +3,7 @@
     .contents-main-right-message__user-name
       = message.user.name
     .contents-main-right-message__user-timestamp
-      = message.created_at.strftime("%Y/%m/%d %H:%M")
+      = message.created_at.to_s(:datetime)
   .contents-main-right-message__message
     = message.content if message.content.present?
     = image_tag message.image.url if message.image.present?
