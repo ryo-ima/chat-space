@@ -1,10 +1,11 @@
-.contents-main-right__user
-  .contents-main-right__user-name
-    = message.user.name
-  .contents-main-right__user-timestamp
-    = message.created_at.strftime("%Y/%m/%d %H:%M")
-.contents-main-right__message
-  = message.content if message.content.present?
-  = image_tag message.image.url if message.image.present?
+.contents-main-right-message{data: {messageid: message.id}}
+  .contents-main-right-message__user
+    .contents-main-right-message__user-name
+      = message.user.name
+    .contents-main-right-message__user-timestamp
+      = message.created_at.to_s(:datetime)
+  .contents-main-right-message__message
+    = message.content if message.content.present?
+    = image_tag message.image.url if message.image.present?
 
 
