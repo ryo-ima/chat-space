@@ -67,7 +67,7 @@ html{
   @include clearfix();
   height: calc(100% - 99px);
   padding-top:99px;
-  position:relative;
+  position:fixed;
   display:flex;
   z-index:1;
   &-left{
@@ -94,7 +94,7 @@ html{
   &-right{
     @include right();
     background-color: #fafafa;
-    padding-bottom:110px;
+    padding-bottom:130px;
     overflow:scroll;
     position:relative;
     &-message{
