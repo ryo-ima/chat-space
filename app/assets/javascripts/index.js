@@ -66,7 +66,7 @@ $(document).on('turbolinks:load', function(){
   });
 
 // 削除ボタン
-  $(document).on("click", `.chat-group-user`, function() {
-    (this).remove();
+  selected_list.on("click", `.user-search-remove`, function() {
+    $(this).parent().remove();
     });
 });
