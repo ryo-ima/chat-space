@@ -1,9 +1,12 @@
 class UsersController < ApplicationController
   def index
+    # @usersにUserテーブルからログインユーザー以外でkeywordに一部一致したものを代入。
     @users = User.where('name LIKE(?)', "%#{params[:keyword]}%").where.not(id: 
       current_user.id)
+      # htmlの時とjsonの時、それぞれを呼び出す。
     respond_to do |format|
       format.html 
+      # jsonで呼ばれた時、index.json.jbuilderへ
       format.json 
     end
   end
